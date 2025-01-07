@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { IoChevronForwardOutline } from "react-icons/io5";
 
 const Task01 = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   return (
     <div
@@ -24,17 +23,28 @@ const Task01 = () => {
               <p className="text-sm">Model</p>
             </div>
             <p className="text-justify">
-              Lorem ipsum dolor sit amet consectet, adipisicing elit. Quas quo,
-              consectetur reiciendis magni quod.
+              Lorem ipsum dolor sit amet incidunt consectet, adipisicing elit.
+              Quas quo, consectetur reiciendis magni quod.
             </p>
           </div>
 
-          <div className={show ? "flex flex-col justify-between items-start pb-5 w-full gap-2" : "hidden"}>
-            <p className="hover:underline underline-offset-4 cursor-pointer">@jenniedoe.com</p>
+          <div
+            className={
+              show
+                ? "flex flex-col justify-between items-start pb-5 w-full gap-2"
+                : "hidden"
+            }
+          >
+            <p className="hover:underline underline-offset-4 cursor-pointer">
+              @jenniedoe.com
+            </p>
             <p>162 Fairview, Wonderland MNL</p>
             <p>Born in December 22, 2002</p>
           </div>
-          <button onClick={() => setShow(prev => !prev)} className="flex justify-center items-center gap-1 py-3 border border-black w-full hover:bg-black hover:text-primary active:border-black active:bg-white active:text-black transition-all duration-300 ease-out">
+          <button
+            onClick={() => setShow((prev) => !prev)}
+            className="flex justify-center items-center gap-1 py-3 border border-black w-full hover:bg-black hover:text-primary active:border-black active:bg-white active:text-black transition-all duration-300 ease-out"
+          >
             <p className="text-sm">See {show ? "Less" : "More"}</p>
             <IoChevronForwardOutline size={14} />
           </button>
