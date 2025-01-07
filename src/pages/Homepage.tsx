@@ -1,0 +1,55 @@
+import reactLogo from "../assets/react.svg";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const Homepage = () => {
+  return (
+    <div className="w-full flex flex-col justify-start items-start gap-4">
+      <h1 className="text-2xl font-semibold">Learning Gallery</h1>
+      <div className="flex justify-center items-center sm:gap-2 gap-4">
+        <a
+          href="https://react.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-tertiaryFill rounded-full p-2 flex items-center justify-center"
+        >
+          <img
+            src={reactLogo}
+            className="logo react spin-logo w-5 h-5"
+            alt="React logo"
+          />
+        </a>
+
+        <p className="capitalize text-sm text-secondary sm:w-full w-56 text-start">
+          This is my journey to mastering frontend development.
+        </p>
+      </div>
+
+      <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-3">
+        <p className="text-sm font-semibold capitalize tracking-wide">Task 1</p>
+        <div className="flex justify-start items-center w-full bg-secondaryFill rounded-md">
+          <Accordion type="single" collapsible className="w-full px-4">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="text-sm font-semibold capitalize tracking-wider">
+                Create a toggleable Profile Card.
+              </AccordionTrigger>
+              <AccordionContent className="w-full text-start font-light tracking-wide">
+                Display the picture, first name, last name, age, and work info,
+                followed by a 'See More' button, which, when clicked, reveals
+                the email, address, and date of birth. When "See More" was
+                clicked, it should now be "See Less" and hides the respective
+                info again.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Homepage;
