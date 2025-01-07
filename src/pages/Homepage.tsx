@@ -48,8 +48,8 @@ const Homepage = () => {
               <p className="text-sm font-semibold capitalize tracking-wide">
                 Task {index + 1}
               </p>
-              <a href="/task-one" className="flex justify-center items-center w-fit px-3 py-1 border border-primaryStroke bg-secondaryFill rounded-md gap-1 hover:bg-quaternaryFill duration-300 transition-colors ease-out">
-                <p className="text-[12px]">Check It Out</p>
+              <a href="/task-one" className="flex justify-center items-center w-fit px-2 py-1 border border-primaryStroke bg-secondaryFill rounded-md gap-1 hover:bg-quaternaryFill duration-300 transition-colors ease-out">
+                <p className="text-[12px]">View</p>
                 <GoArrowUpRight size={15} className="mt-[1px]" />
               </a>
             </div>
