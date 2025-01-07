@@ -5,7 +5,7 @@ import { BiLogoGmail, BiWorld } from "react-icons/bi";
 
 const Task01 = () => {
   return (
-    <div id="task-one" className="flex justify-center items-center w-full h-screen">
+    <div id="task-one" className="flex justify-center sm:items-center w-full h-screen sm:mt-0 mt-14">
       <div className="flex justify-end items-center border border-l border-primaryStroke h-[30rem] w-80">
         <div className="flex flex-col justify-between items-center h-[400px] w-10 py-2 mr-[2px]">
           <div className="flex justify-center items-center -rotate-90">
