@@ -11,7 +11,8 @@ module.exports = {
   			primaryStroke: '#3D444D',
   			primaryFill: '#0D1117',
   			secondaryFill: '#212830',
-  			tertiaryFill: '#15191F'
+  			tertiaryFill: '#15191F',
+        quaternaryFill: '#262C36',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
