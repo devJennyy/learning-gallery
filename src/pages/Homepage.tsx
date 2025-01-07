@@ -17,7 +17,7 @@ const Homepage = () => {
     },
   ];
   return (
-    <div className="w-full flex flex-col justify-start items-start gap-4 mt-10">
+    <div className="max-w-[1440px] mx-auto w-full 2xl:px-16 xl:px-10 px-5 flex flex-col justify-start items-start gap-4 mt-10">
       <h1 className="text-2xl font-semibold">Learning Gallery</h1>
       <div className="flex justify-center items-center sm:gap-2 gap-4">
         <a
