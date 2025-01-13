@@ -15,6 +15,12 @@ const Homepage = () => {
       description:
         "Display the picture, first name, last name, age, and work info, followed by a 'See More' button, which, when clicked, reveals the email, address, and date of birth. When 'See More' was clicked, it should now be 'See Less' and hides the respective info again.",
     },
+    {
+      href: "/task-two",
+      title: "Create a BMI Calculator.",
+      description:
+        "A simple BMI Calculator where users can input their weight (kg) and height (cm). Upon clicking a button, it calculates the BMI and displays whether the user is underweight, normal, overweight, or other categories.",
+    },
   ];
   return (
     <div className="max-w-[1440px] mx-auto w-full 2xl:px-16 xl:px-10 px-5 flex flex-col justify-start items-start gap-4 mt-10">
@@ -48,7 +54,7 @@ const Homepage = () => {
               <p className="text-sm font-semibold capitalize tracking-wide">
                 Task {index + 1}
               </p>
-              <a href="/task-one" className="flex justify-center items-center w-fit sm:px-3 px-2 py-1 border border-primaryStroke bg-secondaryFill rounded-md gap-1 hover:bg-quaternaryFill duration-300 transition-colors ease-out">
+              <a href={items.href} className="flex justify-center items-center w-fit sm:px-3 px-2 py-1 border border-primaryStroke bg-secondaryFill rounded-md gap-1 hover:bg-quaternaryFill duration-300 transition-colors ease-out">
                 <p className="text-[12px]">View</p>
                 <GoArrowUpRight size={15} className="mt-[1px]" />
               </a>
