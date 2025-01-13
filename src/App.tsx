@@ -6,6 +6,7 @@ import './App.css'
 import Homepage from './pages/Homepage'
 import Task01 from './pages/Tasks/Task01'
 import Task02 from './pages/Tasks/Task02'
+import Task03 from './pages/Tasks/Task03'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/task-one" element={<Task01 />} />
           <Route path="/task-two" element={<Task02 />} />
+          <Route path="/task-three" element={<Task03 />} />
         </Routes>
   </Router>
   )

@@ -21,6 +21,12 @@ const Homepage = () => {
       description:
         "A simple BMI Calculator where users can input their weight (kg) and height (cm). Upon clicking a button, it calculates the BMI and displays whether the user is underweight, normal, overweight, or other categories.",
     },
+    {
+      href: "/task-three",
+      title: "Celsius to Fahrenheit.",
+      description:
+        "Converts celsius into Fahrenheit and as well as display the temperature's weather category.",
+    },
   ];
   return (
     <div className="max-w-[1440px] mx-auto w-full 2xl:px-16 xl:px-10 px-5 flex flex-col justify-start items-start gap-4 mt-10">
