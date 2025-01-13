@@ -14,25 +14,25 @@ const Task03 = () => {
     if (convertFahrenheit <= 14) {
       setTemperature("Very Cold");
       setImage("/images/very-cold.png");
-    } else if (convertFahrenheit >= 14 && convertFahrenheit <= 32) {
+    } else if (convertFahrenheit >= 15 && convertFahrenheit <= 32) {
       setTemperature("Cold");
       setImage("/images/cold-cool.png");
-    } else if (convertFahrenheit >= 32 && convertFahrenheit <= 50) {
+    } else if (convertFahrenheit >= 33 && convertFahrenheit <= 50) {
       setTemperature("Cool");
       setImage("/images/cold-cool.png");
-    } else if (convertFahrenheit >= 50 && convertFahrenheit <= 68) {
+    } else if (convertFahrenheit >= 51 && convertFahrenheit <= 68) {
       setTemperature("Mild");
       setImage("/images/mild-warm.png");
-    } else if (convertFahrenheit >= 68 && convertFahrenheit <= 77) {
+    } else if (convertFahrenheit >= 69 && convertFahrenheit <= 77) {
       setTemperature("Warm");
       setImage("/images/mild-warm.png");
-    } else if (convertFahrenheit >= 77 && convertFahrenheit <= 86) {
+    } else if (convertFahrenheit >= 78 && convertFahrenheit <= 86) {
       setTemperature("Hot");
       setImage("/images/hot-veryhot.png");
-    } else if (convertFahrenheit >= 86 && convertFahrenheit <= 95) {
+    } else if (convertFahrenheit >= 87 && convertFahrenheit <= 95) {
       setTemperature("Very Hot");
       setImage("/images/hot-veryhot.png");
-    } else if (convertFahrenheit >= 95) {
+    } else if (convertFahrenheit >= 96) {
       setTemperature("Extreme Hot");
       setImage("/images/extreme-hot.png");
     }
@@ -75,8 +75,8 @@ const Task03 = () => {
 
       <div className="flex flex-col gap-1 border-t border-secondary/20 mt-10">
         <p className="text-sm mt-5">
-          The Temperature Is :
-          <span className="text-cyan-300 font-bold tracking-wide ml-1">
+          The Temperature Is:
+          <span className={`${fahrenheit < 78 ? 'text-cyan-500' : 'text-red-400'} font-bold tracking-wide ml-1`}>
             {temperature}
           </span>
         </p>
