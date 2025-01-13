@@ -45,13 +45,13 @@ const Task02 = () => {
           You are
           <span className="uppercase text-green-300 font-bold tracking-wide ml-1">{category}</span>
         </p>
-        <div className="h-fit sm:mt-2">
+        {bmi ? <div className="h-fit sm:mt-2">
           <img
             src={image}
             alt="Bmi Category"
             className="w-full h-[250px] object-cover"
           />
-        </div>
+        </div> : <div> ... </div>}
       </div>
       <div className="flex gap-4 w-full h-32">
         <div className="flex flex-col justify-center items-center w-full h-full bg-primaryFill border border-primaryStroke rounded-sm">
