@@ -27,9 +27,15 @@ const Homepage = () => {
       description:
         "Converts celsius into Fahrenheit and as well as display the temperature's weather category.",
     },
+    {
+      href: "/task-four",
+      title: "Converts Peso to USD and Vice Versa with a Switch Functionality",
+      description:
+        "Implement a currency converter that allows users to switch seamlessly between converting Philippine Pesos (PHP) to US Dollars (USD) and vice versa and displays accurate conversion rates.",
+    },
   ];
   return (
-    <div className="max-w-[1440px] mx-auto w-full 2xl:px-16 xl:px-10 px-5 flex flex-col justify-start items-start gap-4 mt-10">
+    <div className="max-w-[1440px] mx-auto w-full 2xl:px-16 xl:px-10 px-5 flex flex-col justify-start items-start gap-4 my-10">
       <h1 className="text-2xl font-semibold">Learning Gallery</h1>
       <div className="flex justify-center items-center sm:gap-2 gap-4">
         <a
