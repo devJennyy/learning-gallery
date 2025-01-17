@@ -19,6 +19,12 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: var(--primaryFill);
+  min-width: 100% !important;
+}
+
+html > body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
 }
 
 * {
