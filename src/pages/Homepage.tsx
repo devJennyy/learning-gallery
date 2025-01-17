@@ -23,7 +23,7 @@ const Homepage = () => {
         <div className="w-full h-full flex justify-center items-center px-3 bg-primaryFill border border-primaryStroke rounded-md">
           <LuSearch size={18} className="opacity-70" />
           <input
-            placeholder="Search Task Title or Any Word..."
+            placeholder="Search task title or keyword..."
             className="text-sm bg-transparent outline-none text-left w-full h-full pl-3"
           />
         </div>
