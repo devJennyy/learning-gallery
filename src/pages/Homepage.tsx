@@ -15,44 +15,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Homepage = () => {
   return (
-    <div className="max-w-[1440px] mx-auto w-full xl:px-20 px-5 my-20">
-      <div className="w-full h-11 flex justify-between items-center gap-3 mb-16 text-[15px] font-medium">
-        <div className="w-full h-full flex justify-center items-center px-3 bg-primaryFill border border-primaryStroke rounded-md">
-          <LuSearch size={18} className="opacity-70" />
-          <input
-            placeholder="Search task title or keyword..."
-            className="text-sm bg-transparent outline-none text-left w-full h-full pl-3"
-          />
-        </div>
-        <Select>
-          <SelectTrigger className="w-48 flex justify-between items-center gap-2 pl-4 h-full bg-primaryFill border border-primaryStroke rounded-md whitespace-nowrap no-scrollbar">
-            <SelectValue placeholder="Sort by oldest" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="light">Sort by oldest</SelectItem>
-            <SelectItem value="dark">Sort by newest</SelectItem>
-          </SelectContent>
-        </Select>
-        <button className="w-44 px-5 h-full bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out">
-          Suggest Topic
-        </button>
-      </div>
-
-      <div className="w-full flex flex-col justify-start items-start gap-4">
+    <div className="max-w-[1440px] mx-auto w-full xl:px-20 px-5 py-10">
+      <div className="w-full flex flex-col justify-start items-start gap-3">
         <h1 className="text-2xl font-semibold">Learning Gallery</h1>
         <div className="flex justify-center items-center sm:gap-2 gap-4">
           <a
             href="https://react.dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-tertiaryFill rounded-full p-2 flex items-center justify-center"
+            className="bg-tertiaryFill rounded-full p-[6px] flex items-center justify-center"
           >
             <img
               src={reactLogo}
-              className="logo react spin-logo w-5 h-5"
+              className="logo react spin-logo w-[18px] h-[18px]"
               alt="React logo"
             />
           </a>
@@ -61,7 +41,31 @@ const Homepage = () => {
             A journey to mastering React frontend development.
           </p>
         </div>
+      </div>
 
+      <div className="w-full flex flex-col justify-start items-start gap-4 mt-10">
+        <div className="w-full h-11 flex justify-between items-center gap-3 text-[15px] font-medium mb-5">
+          <div className="w-full h-full flex justify-center items-center px-3 bg-primaryFill border border-primaryStroke rounded-md">
+            <LuSearch size={18} className="opacity-70" />
+            <input
+              placeholder="Search task title or keyword..."
+              className="text-sm bg-transparent outline-none text-left w-full h-full pl-3"
+            />
+          </div>
+          <Select>
+            <SelectTrigger className="hidden w-48 sm:flex justify-between items-center gap-2 pl-4 h-full bg-primaryFill border border-primaryStroke rounded-md whitespace-nowrap no-scrollbar">
+              <SelectValue placeholder="Sort by oldest" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="light">Sort by oldest</SelectItem>
+              <SelectItem value="dark">Sort by newest</SelectItem>
+            </SelectContent>
+          </Select>
+          <button className="hidden sm:block w-44 px-5 h-full bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out">
+            Suggest Topic
+          </button>
+        </div>
+        <h1 className="text-xl font-semibold">Task Lists</h1>
         {learningGalleryItems?.map((items, index) => {
           return (
             <div
@@ -95,6 +99,27 @@ const Homepage = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="w-full border-t border-primaryStroke mt-24">
+        <div className="w-full flex justify-between mt-5 text-sm text-secondary">
+          <button className="flex justify-center items-center gap-1">
+            <p>Visit my GitHub</p>
+            <GoArrowUpRight size={16} className="mt-[2px]" />
+          </button>
+          <p>Designed and Developed by Jenny Pieloor</p>
+          <div className="flex justify-center items-center gap-3">
+            <button>
+              <FaGithub size={17} />
+            </button>
+            <button>
+              <FaLinkedinIn size={18} />
+            </button>
+            <button>
+              <MdEmail size={18} className="mt-[1px]"/>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
