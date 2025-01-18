@@ -37,7 +37,7 @@ const Homepage = () => {
     },
   ];
   return (
-    <div className="max-w-[1440px] mx-auto w-full xl:px-20 px-5 py-10">
+    <div className="w-full max-w-[1440px] mx-auto xl:px-20 px-5 py-10">
       <div className="w-full flex flex-col justify-start items-start gap-3">
         <h1 className="text-2xl font-semibold">Learning Gallery</h1>
         <div className="flex justify-center items-center sm:gap-2 gap-4">
@@ -61,7 +61,7 @@ const Homepage = () => {
       </div>
 
       <div className="w-full flex flex-col justify-start items-start gap-4 mt-10">
-        <div className="w-full h-11 flex justify-between items-center gap-3 text-[15px] font-medium mb-5">
+        <div className="w-full h-11 flex justify-between items-center sm:gap-3 gap-2 text-[15px] font-medium mb-5">
           <div className="w-full h-full flex justify-center items-center px-3 bg-primaryFill border border-primaryStroke rounded-md">
             <LuSearch size={18} className="opacity-70" />
             <input
@@ -81,6 +81,17 @@ const Homepage = () => {
           <button className="hidden sm:block w-44 px-5 h-full bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out">
             Suggest Topic
           </button>
+
+          <Select>
+            <SelectTrigger className="w-12 h-full bg-secondaryFill"></SelectTrigger>
+            <SelectContent className="p-1 mr-2 mt-1">
+              <SelectItem value="light">Sort by oldest</SelectItem>
+              <SelectItem value="dark">Sort by newest</SelectItem>
+             <div className="mt-2 border-t border-primaryStroke">
+             <SelectItem className="w-44 mt-3 px-5 h-full flex justify-center items-center bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out" value="dark">Suggest Topic</SelectItem>
+             </div>
+            </SelectContent>
+          </Select>
         </div>
         <h1 className="text-xl font-semibold">Task Lists</h1>
         {learningGalleryItems?.map((items, index) => {
@@ -118,33 +129,33 @@ const Homepage = () => {
         })}
       </div>
 
-      <div className="flex flex-col items-center w-full border-t border-primaryStroke mt-24 text-sm text-secondary">
-        <p className="sm:hidden mt-5 w-1/2">
+      <div className="w-full flex flex-col items-center border-t border-primaryStroke mt-24 text-sm text-secondary">
+        <p className="sm:hidden mt-5 w-[12rem]">
           Designed and Developed by Jenny Pieloor
         </p>
         <div className="w-full flex justify-between sm:mt-5 mt-7">
-          <button
+          <a
+            href="https://github.com/devJennyy"
+            target="_blank"
             className="flex justify-center items-center gap-1 hover:text-primary duration-300 transition-colors ease-out"
-            onClick={() =>
-              window.open("https://github.com/devJennyy", "_blank")
-            }
           >
             <p>Visit my GitHub</p>
             <GoArrowUpRight size={16} className="mt-[2px]" />
-          </button>
+          </a>
           <p className="hidden sm:block">
             Designed and Developed by Jenny Pieloor
           </p>
           <div className="flex justify-center items-center gap-3">
-            {socialLinks.map((link, index) => (
-              <button
+            {socialLinks?.map((link, index) => (
+              <a
+                href={link.link}
+                target="_blank"
                 key={index}
                 className="hover:text-primary duration-300 transition-colors ease-out"
-                onClick={() => window.open(link.link, "_blank")}
                 aria-label={link.label}
               >
                 {link.icon}
-              </button>
+              </a>
             ))}
           </div>
         </div>
