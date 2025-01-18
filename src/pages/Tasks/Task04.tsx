@@ -4,16 +4,27 @@ import { GrPowerCycle } from "react-icons/gr";
 const Task04 = () => {
   const [usd, setUsd] = useState("");
   const [php, setPhp] = useState("");
-  const [convert, setConvert] = useState(0);
+  const [convertType, setConvertType] = useState("usd to php");
 
-  const usdExchange = () => {
-    const usdExchangeRate = parseInt(usd) * 58.66;
-    setConvert(usdExchangeRate);
+  const convert = () => {
+    if (convertType === "usd to php") {
+      const valuePhp = (parseInt(usd) * 58).toFixed(3);
+      setPhp(valuePhp.toString());
+    } else if (convertType === "php to usd") {
+      const valueUsd = (parseInt(php) / 58).toFixed(3);
+      setUsd(valueUsd.toString());
+    }
   };
 
-  const phpExchange = () => {
-    const phpExchangeRate = parseInt(php) * 58.66;
-    setConvert(phpExchangeRate);
+  const switchType = () => {
+    if (convertType === "usd to php") {
+      setConvertType("php to usd");
+    } else if (convertType === "php to usd") {
+      setConvertType("usd to php");
+    }
+
+    setUsd("");
+    setPhp("");
   };
 
   return (
@@ -33,55 +44,70 @@ const Task04 = () => {
 
         <div className="flex flex-col gap-3 justify-center items-center relative bg-primaryFill border border-primaryStroke p-4 rounded-xl w-full">
           {/* USD Section */}
-          <div className="flex flex-col items-start gap-2 w-full bg-secondaryFill border border-primaryStroke rounded-xl px-4 py-5">
-            <p className="text-secondary text-sm">USD $ - US Dollar</p>
-            {convert ? (
-              <div className="text-5xl font-bold bg-transparent outline-none text-left w-full h-10">
-                {usd ? usd : convert.toFixed(2)}
-              </div>
-            ) : (
+          {convertType === "usd to php" ? (
+            <div className="flex flex-col items-start gap-2 w-full bg-secondaryFill border border-primaryStroke rounded-xl px-4 py-5">
+              <p className="text-secondary text-sm">USD $ - US Dollar</p>
               <input
                 placeholder="0"
                 type="number"
                 value={usd}
-                onChange={(e) =>
-                  setUsd(e.target.value ? e.target.value : convert.toFixed(2))
-                }
+                onChange={(e) => setUsd(e.target.value)}
                 className="text-5xl font-bold bg-transparent outline-none text-left w-full h-10"
               />
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className="flex flex-col items-start gap-2 w-full bg-secondaryFill border border-primaryStroke rounded-xl px-4 py-5">
+              <p className="text-secondary text-sm">PHP ₱ - Philippine Peso</p>
+              <input
+                placeholder="0"
+                type="number"
+                value={php}
+                onChange={(e) => setPhp(e.target.value)}
+                className="text-5xl font-bold bg-transparent outline-none text-left w-full h-10"
+              />
+            </div>
+          )}
 
           {/* Cycle button */}
           <div className="bg-primaryFill p-1 rounded-full absolute">
-            <button className="p-2 bg-secondaryFill rounded-full border border-primaryStroke ">
+            <button
+              onClick={() => switchType()}
+              className="p-2 bg-secondaryFill rounded-full border border-primaryStroke "
+            >
               <GrPowerCycle size={24} className="spin-button" />
             </button>
           </div>
 
           {/* PHP Section */}
-          <div className="flex flex-col items-start gap-2 w-full bg-secondaryFill border border-primaryStroke rounded-xl px-4 py-5">
-            <p className="text-secondary text-sm">PHP ₱ - Philippine Peso</p>
-            {convert ? (
-              <div className="text-5xl font-bold bg-transparent outline-none text-left w-full h-10">
-                {php ? php : convert.toFixed(2)}
-              </div>
-            ) : (
+          {convertType === "usd to php" ? (
+            <div className="flex flex-col items-start gap-2 w-full bg-secondaryFill border border-primaryStroke rounded-xl px-4 py-5">
+              <p className="text-secondary text-sm">PHP ₱ - Philippine Peso</p>
               <input
                 placeholder="0"
                 type="number"
                 value={php}
-                onChange={(e) =>
-                  setPhp(e.target.value ? e.target.value : convert.toFixed(2))
-                }
+                onChange={(e) => setPhp(e.target.value)}
                 className="text-5xl font-bold bg-transparent outline-none text-left w-full h-10"
+                disabled={true}
               />
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className="flex flex-col items-start gap-2 w-full bg-secondaryFill border border-primaryStroke rounded-xl px-4 py-5">
+              <p className="text-secondary text-sm">USD $ - US Dollar</p>
+              <input
+                placeholder="0"
+                type="number"
+                value={usd}
+                onChange={(e) => setUsd(e.target.value)}
+                className="text-5xl font-bold bg-transparent outline-none text-left w-full h-10"
+                disabled={true}
+              />
+            </div>
+          )}
         </div>
 
         <button
-          onClick={() => {phpExchange(); usdExchange();}}
+          onClick={() => convert()}
           className="flex justify-center items-center w-full mt-5 py-3 border border-primaryStroke bg-secondaryFill rounded-xl gap-1 hover:bg-quaternaryFill duration-300 transition-colors ease-out z-10"
         >
           <p className="capitalize text-lg font-bold tracking-wide">
