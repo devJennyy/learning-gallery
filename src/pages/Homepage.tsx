@@ -19,6 +19,23 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const Homepage = () => {
+  const socialLinks = [
+    {
+      icon: <FaGithub size={17} />,
+      label: "GitHub",
+      link: "https://github.com/devJennyy",
+    },
+    {
+      icon: <FaLinkedinIn size={18} />,
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/jennypieloor/",
+    },
+    {
+      icon: <MdEmail size={18} className="mt-[1px]" />,
+      label: "Email",
+      link: "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=devjenny.official@gmail.com",
+    },
+  ];
   return (
     <div className="max-w-[1440px] mx-auto w-full xl:px-20 px-5 py-10">
       <div className="w-full flex flex-col justify-start items-start gap-3">
@@ -101,23 +118,34 @@ const Homepage = () => {
         })}
       </div>
 
-      <div className="w-full border-t border-primaryStroke mt-24">
-        <div className="w-full flex justify-between mt-5 text-sm text-secondary">
-          <button className="flex justify-center items-center gap-1">
+      <div className="flex flex-col items-center w-full border-t border-primaryStroke mt-24 text-sm text-secondary">
+        <p className="sm:hidden mt-5 w-1/2">
+          Designed and Developed by Jenny Pieloor
+        </p>
+        <div className="w-full flex justify-between sm:mt-5 mt-7">
+          <button
+            className="flex justify-center items-center gap-1 hover:text-primary duration-300 transition-colors ease-out"
+            onClick={() =>
+              window.open("https://github.com/devJennyy", "_blank")
+            }
+          >
             <p>Visit my GitHub</p>
             <GoArrowUpRight size={16} className="mt-[2px]" />
           </button>
-          <p>Designed and Developed by Jenny Pieloor</p>
+          <p className="hidden sm:block">
+            Designed and Developed by Jenny Pieloor
+          </p>
           <div className="flex justify-center items-center gap-3">
-            <button>
-              <FaGithub size={17} />
-            </button>
-            <button>
-              <FaLinkedinIn size={18} />
-            </button>
-            <button>
-              <MdEmail size={18} className="mt-[1px]"/>
-            </button>
+            {socialLinks.map((link, index) => (
+              <button
+                key={index}
+                className="hover:text-primary duration-300 transition-colors ease-out"
+                onClick={() => window.open(link.link, "_blank")}
+                aria-label={link.label}
+              >
+                {link.icon}
+              </button>
+            ))}
           </div>
         </div>
       </div>
