@@ -78,10 +78,14 @@ const Homepage = () => {
               <SelectItem value="dark">Sort by newest</SelectItem>
             </SelectContent>
           </Select>
-          
-          <button className="hidden sm:block w-44 px-5 h-full bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out">
+
+          <a
+            href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=devjenny.official@gmail.com&su=Suggestion%20for%20a%20New%20Topic"
+            target="_blank"
+            className="hidden w-44 sm:flex justify-center items-center px-5 h-full bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out"
+          >
             Suggest Topic
-          </button>
+          </a>
 
           <Select>
             <SelectTrigger className="sm:hidden w-12 h-full bg-secondaryFill"></SelectTrigger>
@@ -93,7 +97,13 @@ const Homepage = () => {
                   className="w-44 mt-3 px-5 h-full flex justify-center items-center bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out"
                   value="dark"
                 >
-                  Suggest Topic
+                  <a
+                    href="mailto:devjenny.official@gmail.com?subject=Suggestion%20for%20a%20New%20Topic"
+                    target="_blank"
+                    className="sm:hidden "
+                  >
+                    Suggest Topic
+                  </a>
                 </SelectItem>
               </div>
             </SelectContent>
