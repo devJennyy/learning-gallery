@@ -61,7 +61,7 @@ const Homepage = () => {
       </div>
 
       <div className="w-full flex flex-col justify-start items-start gap-4 mt-10">
-        <div className="w-full h-11 flex justify-between items-center sm:gap-3 gap-2 text-[15px] font-medium mb-5">
+        <div className="w-full h-12 flex justify-between items-center sm:gap-3 gap-2 text-[15px] font-medium mb-5">
           <div className="w-full h-full flex justify-center items-center px-3 bg-primaryFill border border-primaryStroke rounded-md">
             <LuSearch size={18} className="opacity-70" />
             <input
@@ -78,18 +78,24 @@ const Homepage = () => {
               <SelectItem value="dark">Sort by newest</SelectItem>
             </SelectContent>
           </Select>
+          
           <button className="hidden sm:block w-44 px-5 h-full bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out">
             Suggest Topic
           </button>
 
           <Select>
-            <SelectTrigger className="w-12 h-full bg-secondaryFill"></SelectTrigger>
+            <SelectTrigger className="sm:hidden w-12 h-full bg-secondaryFill"></SelectTrigger>
             <SelectContent className="p-1 mr-2 mt-1">
               <SelectItem value="light">Sort by oldest</SelectItem>
               <SelectItem value="dark">Sort by newest</SelectItem>
-             <div className="mt-2 border-t border-primaryStroke">
-             <SelectItem className="w-44 mt-3 px-5 h-full flex justify-center items-center bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out" value="dark">Suggest Topic</SelectItem>
-             </div>
+              <div className="mt-2 border-t border-primaryStroke">
+                <SelectItem
+                  className="w-44 mt-3 px-5 h-full flex justify-center items-center bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out"
+                  value="dark"
+                >
+                  Suggest Topic
+                </SelectItem>
+              </div>
             </SelectContent>
           </Select>
         </div>
