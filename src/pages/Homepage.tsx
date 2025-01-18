@@ -17,8 +17,50 @@ import {
 } from "@/components/ui/select";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 const Homepage = () => {
+  const [allData, setAllData] = useState(learningGalleryItems);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredData = allData.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.number.includes(searchQuery)
+  );
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const sortData = (value: string) => {
+    if (value === "Newest") {
+      setAllData((prevData) => [...prevData].reverse());
+    } else {
+      setAllData(learningGalleryItems);
+    }
+  };
+
+  const [placeholderText, setPlaceholderText] = useState("");
+
+  useEffect(() => {
+    const updatePlaceholder = () => {
+      if (window.innerWidth < 768) {
+        setPlaceholderText("Search...");
+      } else {
+        setPlaceholderText("Search by task number, title, or description");
+      }
+    };
+
+    updatePlaceholder();
+    window.addEventListener("resize", updatePlaceholder);
+
+    return () => {
+      window.removeEventListener("resize", updatePlaceholder);
+    };
+  }, []);
+
   const socialLinks = [
     {
       icon: <FaGithub size={17} />,
@@ -65,20 +107,21 @@ const Homepage = () => {
           <div className="w-full h-full flex justify-center items-center px-3 bg-primaryFill border border-primaryStroke rounded-md">
             <LuSearch size={18} className="opacity-70" />
             <input
-              placeholder="Search task title or keyword..."
+              onChange={handleSearchChange}
+              placeholder={placeholderText}
               className="text-sm bg-transparent outline-none text-left w-full h-full pl-3"
             />
           </div>
-          <Select>
+          <Select onValueChange={sortData}>
             <SelectTrigger className="hidden w-48 sm:flex justify-between items-center gap-2 pl-4 h-full bg-primaryFill border border-primaryStroke rounded-md whitespace-nowrap no-scrollbar">
               <SelectValue placeholder="Sort by oldest" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Sort by oldest</SelectItem>
-              <SelectItem value="dark">Sort by newest</SelectItem>
+              <SelectItem value="Oldest">Sort by oldest</SelectItem>
+              <SelectItem value="Newest">Sort by newest</SelectItem>
             </SelectContent>
           </Select>
-
+          
           <a
             href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=devjenny.official@gmail.com&su=Suggestion%20for%20a%20New%20Topic"
             target="_blank"
@@ -86,17 +129,13 @@ const Homepage = () => {
           >
             Suggest Topic
           </a>
-
-          <Select>
-            <SelectTrigger className="sm:hidden w-12 h-full bg-secondaryFill"></SelectTrigger>
+          <Select onValueChange={sortData}>
+            <SelectTrigger className="sm:hidden w-[52px] h-full bg-secondaryFill"></SelectTrigger>
             <SelectContent className="p-1 mr-2 mt-1">
-              <SelectItem value="light">Sort by oldest</SelectItem>
-              <SelectItem value="dark">Sort by newest</SelectItem>
+              <SelectItem value="Oldest">Sort by oldest</SelectItem>
+              <SelectItem value="Newest">Sort by newest</SelectItem>
               <div className="mt-2 border-t border-primaryStroke">
-                <SelectItem
-                  className="w-44 mt-3 px-5 h-full flex justify-center items-center bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out"
-                  value="dark"
-                >
+                <div className="w-44 h-9 flex justify-center items-center mt-3 text-sm bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out">
                   <a
                     href="mailto:devjenny.official@gmail.com?subject=Suggestion%20for%20a%20New%20Topic"
                     target="_blank"
@@ -104,21 +143,18 @@ const Homepage = () => {
                   >
                     Suggest Topic
                   </a>
-                </SelectItem>
+                </div>
               </div>
             </SelectContent>
           </Select>
         </div>
         <h1 className="text-xl font-semibold">Task Lists</h1>
-        {learningGalleryItems?.map((items, index) => {
+        {filteredData?.map((items) => {
           return (
-            <div
-              key="index"
-              className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-3 cursor-pointer"
-            >
+            <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-3 cursor-pointer">
               <div className="flex justify-between items-center w-full">
                 <p className="text-sm font-semibold capitalize tracking-wide">
-                  Task {index + 1}
+                  Task {items.number}
                 </p>
                 <a
                   href={items.href}
@@ -143,6 +179,20 @@ const Homepage = () => {
             </div>
           );
         })}
+        {filteredData.length <= 0 && (
+          <div className="w-full flex flex-col justify-center items-center sm:gap-5 gap-4 mt-10">
+            <div className="sm:h-[8rem] h-[5rem]">
+              <img
+                src="/images/empty-states.svg"
+                alt="No Data Found"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <p className="text-secondary/35 sm:text-[16px] text-sm font-semibold capitalize tracking-wide">
+              No Data Found!
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="w-full flex flex-col items-center border-t border-primaryStroke mt-24 text-sm text-secondary">

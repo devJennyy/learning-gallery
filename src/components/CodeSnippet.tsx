@@ -4,7 +4,7 @@ import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-okaidia.css";
 import { IoCopyOutline } from "react-icons/io5";
-import { Task01Data } from "@/data/Task01Data";
+import { Task01Data } from "@/data/CodeSnippetData";
 import "../styles/code-editor.css";
 
 const customLanguages = {
