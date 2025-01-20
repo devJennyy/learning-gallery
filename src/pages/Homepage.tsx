@@ -205,7 +205,7 @@ const Homepage = () => {
             target="_blank"
             className="flex justify-center items-center gap-1 hover:text-primary duration-300 transition-colors ease-out"
           >
-            <p>Visit my GitHub</p>
+            <p>View Repository on GitHub</p>
             <GoArrowUpRight size={16} className="mt-[2px]" />
           </a>
           <p className="hidden sm:block">

@@ -2,9 +2,9 @@
     {
       number: "1",
       href: "/task-one",
-      title: "Create a toggleable Profile Card.",
+      title: 'Implement a Toggleable Profile Card with "See More" Functionality',
       description:
-        "Display the picture, first name, last name, age, and work info, followed by a 'See More' button, which, when clicked, reveals the email, address, and date of birth. When 'See More' was clicked, it should now be 'See Less' and hides the respective info again.",
+        'Create a profile card displaying a picture, name, age, and work info, with a "See More" button to reveal additional details like email, address, and date of birth. Clicking "See Less" hides these details.',
     },
     {
       number: "2",
@@ -16,9 +16,9 @@
     {
       number: "3",
       href: "/task-three",
-      title: "Celsius to Fahrenheit.",
+      title: "Celsius to Fahrenheit and Vice Versa with a Switch Functionality",
       description:
-        "Converts celsius into Fahrenheit and as well as display the temperature's weather category.",
+        "Convert temperatures between Celsius and Fahrenheit with an easy-to-use switch, while also displaying the corresponding weather category based on the temperature value.",
     },
     {
       number: "4",
