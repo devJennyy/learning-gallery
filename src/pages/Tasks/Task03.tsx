@@ -134,7 +134,7 @@ const Task03 = () => {
     >
       <div className="w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen bg-quinaryFill">
         {converted ? (
-          <div className="w-full flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-10 relative overflow-hidden">
+          <div className="w-full sm:h-fit h-[300px] flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-[26px] relative overflow-hidden">
             {/* Background */}
             <div className="w-full">
               <div className="absolute sm:left-2 opacity-30 animate-slide-fast">
@@ -160,14 +160,14 @@ const Task03 = () => {
               </div>
             </div>
             {/* Output Section */}
-            <div className="sm:h-[8rem] h-[7.5rem]">
+            <div className="h-[8rem]">
               <img
                 src={weatherIcon}
                 alt="Weather Temperature"
                 className="w-full h-full"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 sm:mb-0 mb-4">
               <p className="sm:text-[3.5rem] text-5xl font-semibold leading-none">
                 {converted} <span className="ml-[-10px]">{symbol}</span>
               </p>
@@ -175,8 +175,8 @@ const Task03 = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-10 relative overflow-hidden">
-            <div className="flex flex-col gap-1">
+          <div className="w-full sm:h-fit h-[300px] flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-10 relative overflow-hidden">
+            <div className="flex flex-col gap-1 sm:mt-0 mt-5">
               <p className="capitalize text-2xl font-bold z-10">
                 Temperature Converter
               </p>
