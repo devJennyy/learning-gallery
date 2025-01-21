@@ -22,7 +22,7 @@ const Task03 = () => {
     {
       image: "/images/warm.svg",
       startLabel: "Warm to",
-      endLabel: " Extremely Hot",
+      endLabel: " Extreme Hot",
     },
   ];
 
@@ -130,11 +130,11 @@ const Task03 = () => {
   return (
     <div
       id="task-three"
-      className="w-full flex justify-center items-center h-screen"
+      className="w-full flex justify-center sm:items-center items-start h-screen bg-quinaryFill"
     >
-      <div className="w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen flex flex-col justify-between items-center bg-quinaryFill">
+      <div className="w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] flex flex-col justify-between items-center bg-quinaryFill">
         {converted ? (
-          <div className="w-full h-full flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 py-7 relative overflow-hidden">
+          <div className="w-full h-full flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 sm:py-7 py-10 relative overflow-hidden">
             {/* Background */}
             <div className="w-full">
               <div className="absolute sm:left-2 opacity-30 animate-slide-fast">
@@ -175,7 +175,7 @@ const Task03 = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full h-full flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 py-7 relative overflow-hidden">
+          <div className="w-full h-full flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 sm:py-7 py-10 relative overflow-hidden">
             <div className="flex flex-col gap-1">
               <p className="capitalize text-2xl font-bold z-10">
                 Temperature Converter
@@ -186,14 +186,14 @@ const Task03 = () => {
               {weatherInsights?.map((items) => {
                 return (
                   <div className="flex flex-col justify-center items-center gap-4">
-                    <div className="sm:w-20 sm:h-20 w-[70px] h-[70px] p-2 rounded-full bg-quinaryFill/40">
+                    <div className="sm:w-20 sm:h-20 w-[65px] h-[65px] p-2 rounded-full bg-quinaryFill/40">
                       <img
                         src={items.image}
                         alt="weather icon"
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <p className="text-sm">
+                    <p className="sm:text-sm text-[13px]">
                       {items.startLabel} <br />
                       {items.endLabel}
                     </p>
