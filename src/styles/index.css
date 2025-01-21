@@ -54,6 +54,8 @@ html > body[data-scroll-locked] {
   display: none;
 }
 
+/* Spin Animation */
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -92,3 +94,31 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: rotate(200deg);
   }
 }
+
+/* Slide Left and Right Animation */
+
+@keyframes slide {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+.animate-slide-fast {
+  animation: slide 3s ease-in-out infinite;
+}
+
+.animate-slide-slow {
+  animation: slide 5s ease-in-out infinite;
+}
+
+.animate-slide-reverse {
+  animation: slide 4s ease-in-out infinite reverse;
+}
+
+
