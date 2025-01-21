@@ -22,7 +22,7 @@ const Task03 = () => {
     {
       image: "/images/warm.svg",
       startLabel: "Warm to",
-      endLabel: " Extreme Hot",
+      endLabel: " Extremely Hot",
     },
   ];
 
@@ -130,11 +130,11 @@ const Task03 = () => {
   return (
     <div
       id="task-three"
-      className="w-full flex justify-center sm:items-center items-start h-screen bg-quinaryFill"
+      className="w-full flex justify-center items-center h-screen"
     >
-      <div className="w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] flex flex-col justify-between items-center bg-quinaryFill">
+      <div className="w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen flex flex-col justify-between items-center bg-quinaryFill">
         {converted ? (
-          <div className="w-full h-full flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 sm:py-7 py-10 relative overflow-hidden">
+          <div className="w-full h-full flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 sm:py-7 relative overflow-hidden">
             {/* Background */}
             <div className="w-full">
               <div className="absolute sm:left-2 opacity-30 animate-slide-fast">
@@ -175,7 +175,7 @@ const Task03 = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full h-full flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 sm:py-7 py-16 relative overflow-hidden">
+          <div className="w-full h-full flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 sm:py-7 pt-5 relative overflow-hidden">
             <div className="flex flex-col gap-1">
               <p className="capitalize text-2xl font-bold z-10">
                 Temperature Converter
@@ -205,7 +205,7 @@ const Task03 = () => {
         )}
 
         <div className="bg-primaryFill">
-          <div className="w-full flex flex-col justify-between items-center bg-quinaryFill rounded-tr-[3rem] bottom-0 z-10 py-7 sm:px-10 px-7">
+          <div className="w-full flex flex-col justify-between items-center bg-quinaryFill rounded-tr-[3rem] bottom-0 z-10 sm:py-7 py-9 sm:px-10 px-7">
             <div className="flex flex-col gap-3 justify-center items-center relative border border-primaryStroke p-3 rounded-xl w-full">
               {/* Celsius Section */}
               {convertType === "celsius to fahrenheit" ? (
