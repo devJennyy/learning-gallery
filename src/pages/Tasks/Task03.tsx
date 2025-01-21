@@ -175,7 +175,7 @@ const Task03 = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full h-full flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 sm:py-7 py-10 relative overflow-hidden">
+          <div className="w-full h-full flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 sm:py-7 py-16 relative overflow-hidden">
             <div className="flex flex-col gap-1">
               <p className="capitalize text-2xl font-bold z-10">
                 Temperature Converter
