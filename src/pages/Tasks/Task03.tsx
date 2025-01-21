@@ -137,30 +137,30 @@ const Task03 = () => {
           <div className="w-full h-full flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 py-7 relative overflow-hidden">
             {/* Background */}
             <div className="w-full">
-              <div className="absolute left-2 opacity-30 animate-slide-fast">
+              <div className="absolute sm:left-2 opacity-30 animate-slide-fast">
                 <img
                   src="/images/cloud-bg-one.svg"
                   alt="Background"
-                  className="w-full h-full"
+                  className="w-full sm:h-full h-[7rem]"
                 />
               </div>
               <div className="absolute right-[-3rem] top-0 opacity-30 animate-slide-reverse">
                 <img
                   src="/images/cloud-bg-one.svg"
                   alt="Background"
-                  className="w-full h-full"
+                  className="w-full sm:h-full h-[7rem]"
                 />
               </div>
-              <div className="absolute right-[1rem] bottom-4 opacity-30 animate-slide-slow">
+              <div className="absolute sm:right-[1rem] right-[-0.5rem] sm:bottom-4 bottom-10 opacity-30 animate-slide-slow">
                 <img
                   src="/images/cloud-bg-two.svg"
                   alt="Background"
-                  className="w-full h-full"
+                  className="w-full sm:h-full h-[7rem]"
                 />
               </div>
             </div>
             {/* Output Section */}
-            <div className="h-[8rem]">
+            <div className="sm:h-[8rem] h-[7.5rem]">
               <img
                 src={weatherIcon}
                 alt="Weather Temperature"
@@ -168,10 +168,10 @@ const Task03 = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <p className="text-[3.5rem] font-semibold leading-none">
+              <p className="sm:text-[3.5rem] text-5xl font-semibold leading-none">
                 {converted} <span className="ml-[-10px]">{symbol}</span>
               </p>
-              <p>The Temperature is {weatherType}</p>
+              <p className="sm:text-[16px] text-sm">The Temperature is {weatherType}</p>
             </div>
           </div>
         ) : (
@@ -182,11 +182,11 @@ const Task03 = () => {
               </p>
               <p className="text-sm z-10">Please enter a number</p>
             </div>
-            <div className="flex justify-center items-center gap-16">
+            <div className="flex justify-center items-center sm:gap-16 gap-7">
               {weatherInsights?.map((items) => {
                 return (
-                  <div className="flex flex-col gap-4">
-                    <div className="w-20 h-20 p-2 rounded-full bg-quinaryFill/40">
+                  <div className="flex flex-col justify-center items-center gap-4">
+                    <div className="sm:w-20 sm:h-20 w-[70px] h-[70px] p-2 rounded-full bg-quinaryFill/40">
                       <img
                         src={items.image}
                         alt="weather icon"
