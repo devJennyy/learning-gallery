@@ -67,7 +67,7 @@ const Task02 = () => {
       id="task-two"
       className="w-full flex flex-col justify-center items-center h-screen"
     >
-      <div className="w-full flex flex-col items-center gap-5 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-5 py-7 relative overflow-hidden bg-quinaryFill">
+      <div className="w-full flex flex-col items-center gap-5 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-4 py-7 relative overflow-hidden bg-quinaryFill">
         <p className="capitalize text-2xl font-semibold z-10">
           Your BMI Report
         </p>
