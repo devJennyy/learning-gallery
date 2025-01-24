@@ -67,26 +67,36 @@ const Task01 = () => {
           </div>
           <div className="w-full flex flex-col p-4 gap-4 text-start bg-secondaryFill rounded-md">
             <p className="font-bold text-xl tracking-wide">Lorem ipsum dolor</p>
-            <p className="text-sm tracking-wide">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Laudantium officiis culpa libero ipsum amet consectetur obcaecati
-              illo{" "}
-              {isExpanded ? (
-                <span>animi. . .</span>
-              ) : (
-                <span>
-                  animi? Animi ipsam aperiam provident, fugit veniam nulla
-                  voluptas temporibus aliquam aliquid illo.
-                </span>
-              )}
-            </p>
+
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-out`}
+              style={{
+                paddingBottom: isExpanded ? "10px" : "0",
+              }}
+            >
+              <p className="text-sm tracking-wide">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Laudantium officiis culpa libero ipsum amet consectetur
+                obcaecati illo{" "}
+                {isExpanded ? (
+                  <span>
+                    animi? Animi ipsam aperiam provident, fugit veniam nulla
+                    voluptas temporibus aliquam aliquid illo.
+                  </span>
+                ) : (
+                  <span>animi...</span>
+                )}
+              </p>
+            </div>
 
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="w-[80px] py-1 border rounded-sm"
+              aria-expanded={isExpanded}
+              aria-controls="toggle-text"
             >
               <p className="text-[12px]">
-                {isExpanded ? "See More" : "See Less"}
+                {isExpanded ? "See Less" : "See More"}
               </p>
             </button>
           </div>
