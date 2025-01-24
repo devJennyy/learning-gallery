@@ -2,14 +2,14 @@
     {
       number: "1",
       href: "/task-one",
-      title: 'Implement a Toggleable Profile Card with "See More" & "See Less" Functionality',
+      title: 'Implement Interactive UI with Toggle Functionality',
       description:
-        'Create a profile card displaying a picture, name, age, and work info, with a "See More" button to reveal additional details like email, address, and date of birth. Clicking "See Less" hides these details.',
+        'Create an interactive UI featuring multiple toggle behaviors. This includes toggles that allow users to expand or collapse content dynamically, revealing additional details or sections.',
     },
     {
       number: "2",
       href: "/task-two",
-      title: "Create a BMI Calculator.",
+      title: "Create a BMI Calculator",
       description:
         "A simple BMI Calculator where users can input their weight (kg) and height (cm). Upon clicking a button, it calculates the BMI and displays whether the user is underweight, normal, overweight, or other categories.",
     },
