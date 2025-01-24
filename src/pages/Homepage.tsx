@@ -201,11 +201,11 @@ const Homepage = () => {
         </p>
         <div className="w-full flex justify-between sm:mt-5 mt-7">
           <a
-            href="https://github.com/devJennyy"
+            href="https://github.com/devJennyy/learning-gallery"
             target="_blank"
             className="flex justify-center items-center gap-1 hover:text-primary duration-300 transition-colors ease-out"
           >
-            <p>View Repository on GitHub</p>
+            <p>View Repository</p>
             <GoArrowUpRight size={16} className="mt-[2px]" />
           </a>
           <p className="hidden sm:block">
