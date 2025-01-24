@@ -2,7 +2,7 @@
     {
       number: "1",
       href: "/task-one",
-      title: 'Implement a Toggleable Profile Card with "See More" Functionality',
+      title: 'Implement a Toggleable Profile Card with "See More" & "See Less" Functionality',
       description:
         'Create a profile card displaying a picture, name, age, and work info, with a "See More" button to reveal additional details like email, address, and date of birth. Clicking "See Less" hides these details.',
     },
