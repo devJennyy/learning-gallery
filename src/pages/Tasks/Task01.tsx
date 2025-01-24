@@ -1,32 +1,45 @@
-import { LuPlus } from "react-icons/lu";
+import { useState } from "react";
+import { LuMinus, LuPlus } from "react-icons/lu";
 
 const Task01 = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [activeAccordion, setActiveAccordion] = useState<number>(0);
   const accordionData = [
     {
-      title: "Lorem",
+      title: "Lorem Ipsum",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perspiciatis eveniet ullam ea magnam omnis ratione!",
       classname: "bg-secondaryFill rounded-t-md",
     },
     {
-      title: "Ipsum",
+      title: "Dolor",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perspiciatis eveniet ullam ea magnam omnis ratione!",
       classname: "bg-[#2C3742]",
     },
     {
-      title: "Dolor",
+      title: "Sit Amet",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perspiciatis eveniet ullam ea magnam omnis ratione!",
       classname: "bg-[#4A5568]",
     },
     {
-      title: "Imuts",
+      title: "Consectetur",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perspiciatis eveniet ullam ea magnam omnis ratione!",
       classname: "bg-[#2C3E50] rounded-b-md",
     },
   ];
+
+  const toggleAccordion = (index: number) => {
+    if (activeAccordion === index) {
+      const nextIndex =
+        index === accordionData.length - 1 ? index - 1 : index + 1;
+      setActiveAccordion(nextIndex);
+    } else {
+      setActiveAccordion(index);
+    }
+  };
 
   return (
     <div
@@ -44,7 +57,7 @@ const Task01 = () => {
           Toggle Elements
         </p>
 
-        {/* 1st Toggle */}
+        {/* See More/Less Toggle */}
         <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-3 cursor-pointer">
           <div className="w-full flex items-center gap-2">
             <div className="p-1 bg-red-300 rounded-full"></div>
@@ -57,17 +70,29 @@ const Task01 = () => {
             <p className="text-sm tracking-wide">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Laudantium officiis culpa libero ipsum amet consectetur obcaecati
-              illo animi? Animi ipsam aperiam provident, fugit veniam nulla
-              voluptas temporibus aliquam aliquid illo.
+              illo{" "}
+              {isExpanded ? (
+                <span>animi. . .</span>
+              ) : (
+                <span>
+                  animi? Animi ipsam aperiam provident, fugit veniam nulla
+                  voluptas temporibus aliquam aliquid illo.
+                </span>
+              )}
             </p>
 
-            <button className="w-[80px] py-1 border rounded-sm">
-              <p className="text-[12px]">See More</p>
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="w-[80px] py-1 border rounded-sm"
+            >
+              <p className="text-[12px]">
+                {isExpanded ? "See More" : "See Less"}
+              </p>
             </button>
           </div>
         </div>
 
-        {/* 2nd OToggle */}
+        {/* Accordion with toggle behavior */}
         <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-3 cursor-pointer">
           <div className="w-full flex items-center gap-2">
             <div className="p-1 bg-red-300 rounded-full"></div>
@@ -82,14 +107,29 @@ const Task01 = () => {
                   key={index}
                   className={`w-full flex flex-col gap-1 p-4 ${items.classname}`}
                 >
-                  <div className="w-full flex justify-between items-center">
+                  <div className="w-full flex justify-between items-center ">
                     <p className="text-semibold text-2xl">{items.title}</p>
-                    <button>
-                      <LuPlus size={27} />
+                    <button onClick={() => toggleAccordion(index)}>
+                      {activeAccordion === index ? (
+                        <LuMinus size={24} />
+                      ) : (
+                        <LuPlus size={24} />
+                      )}
                     </button>
                   </div>
 
-                  <p className="text-start text-sm">{items.description}</p>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-out`}
+                    style={{
+                      opacity: activeAccordion === index ? 1 : 0,
+                      paddingTop: activeAccordion === index ? "10px" : "0",
+                      paddingBottom: activeAccordion === index ? "10px" : "0",
+                    }}
+                  >
+                    {activeAccordion === index && (
+                      <p className="text-start text-sm">{items.description}</p>
+                    )}
+                  </div>
                 </div>
               );
             })}
