@@ -47,7 +47,7 @@ const Task01 = () => {
       className="w-full flex flex-col justify-center items-center h-screen"
     >
       <div
-        className="w-full flex flex-col items-center gap-5 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen p-5 relative overflow-hidden overflow-y-auto bg-primaryFill rounded-sm"
+        className="w-full flex flex-col items-center gap-5 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-5 py-8 relative overflow-hidden overflow-y-auto bg-primaryFill rounded-xl border border-primaryStroke/30"
         style={{
           overflow: "auto",
           scrollbarWidth: "none",
