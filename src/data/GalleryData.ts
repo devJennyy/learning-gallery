@@ -27,4 +27,11 @@
       description:
         "Implement a currency converter that allows users to switch seamlessly between converting Philippine Pesos (PHP) to US Dollars (USD) and vice versa and displays accurate conversion rates.",
     },
+    {
+      number: "5",
+      href: "/task-five",
+      title: "Distance Conversion",
+      description:
+        "Users can choose to input either kilometers, meters, or yards, and the output will be in kilometers, meters, or yards.",
+    },
   ];
