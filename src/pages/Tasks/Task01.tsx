@@ -58,29 +58,27 @@ const Task01 = () => {
         </p>
 
         {/* See More/Less Toggle */}
-        <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-4 cursor-pointer">
+        <div className="flex flex-col items-start w-full bg-quinaryFill rounded-md p-4 gap-4 cursor-pointer">
           <div className="w-full flex items-center gap-2">
             <div className="p-1 bg-red-300 rounded-full"></div>
             <p className="text-sm font-semibold capitalize tracking-wider">
               See More/Less Toggle
             </p>
           </div>
-          <div className="w-full flex flex-col p-4 gap-4 text-start bg-secondaryFill rounded-md">
-            <p className="font-bold text-xl tracking-wide">Lorem ipsum dolor</p>
-
+          <div className="w-full flex flex-col gap-4 text-start rounded-md">
             <div
               className={`overflow-hidden transition-all duration-300 ease-out`}
               style={{
                 paddingBottom: isExpanded ? "10px" : "0",
               }}
             >
-              <p className="text-sm tracking-wide">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <p className="text-sm tracking-wide text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit fugit venia.
                 Laudantium officiis culpa libero ipsum amet consectetur
-                obcaecati illo{" "}
+                obcaecati illo
                 {isExpanded ? (
                   <span>
-                    animi? Animi ipsam aperiam provident, fugit veniam nulla
+                    animi? Animie ipsam aperiame providente, fugite veniame nulla
                     voluptas temporibus aliquam aliquid illo.
                   </span>
                 ) : (
@@ -103,7 +101,7 @@ const Task01 = () => {
         </div>
 
         {/* Accordion with toggle behavior */}
-        <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-4 cursor-pointer">
+        <div className="flex flex-col items-start w-full bg-quinaryFill rounded-md p-4 gap-4 cursor-pointer">
           <div className="w-full flex items-center gap-2">
             <div className="p-1 bg-red-300 rounded-full"></div>
             <p className="text-sm font-semibold capitalize tracking-wider">
