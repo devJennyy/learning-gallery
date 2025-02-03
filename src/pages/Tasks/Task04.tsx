@@ -33,7 +33,7 @@ const Task04 = () => {
       id="task-four"
       className="flex flex-col justify-center items-center w-full h-screen"
     >
-      <div className="flex flex-col justify-center items-center gap-14 w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-8 sm:border border-primaryStroke relative overflow-hidden bg-quinaryFill">
+      <div className="flex flex-col justify-center items-center gap-14 w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-8 sm:border border-primaryStroke relative overflow-hidden bg-quinaryFill sm:rounded-md">
         <div className="flex flex-col gap-1">
           <p className="capitalize text-2xl font-bold z-10">
             Currency Exchange Rate

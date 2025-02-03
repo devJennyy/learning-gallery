@@ -47,21 +47,21 @@ const Task01 = () => {
       className="w-full flex flex-col justify-center items-center h-screen"
     >
       <div
-        className="w-full flex flex-col items-center gap-5 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-5 py-8 relative overflow-hidden overflow-y-auto bg-primaryFill rounded-xl border border-primaryStroke/30"
+        className="w-full flex flex-col items-center gap-5 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-5 py-8 relative overflow-hidden overflow-y-auto bg-primaryFill sm:border border-primaryStroke sm:rounded-md"
         style={{
           overflow: "auto",
           scrollbarWidth: "none",
         }}
       >
         <p className="capitalize text-2xl font-semibold z-10 py-3">
-          Toggle Elements
+          Toggle Components
         </p>
 
         {/* See More/Less Toggle */}
-        <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-3 cursor-pointer">
+        <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-4 cursor-pointer">
           <div className="w-full flex items-center gap-2">
             <div className="p-1 bg-red-300 rounded-full"></div>
-            <p className="text-sm font-semibold capitalize tracking-wide">
+            <p className="text-sm font-semibold capitalize tracking-wider">
               See More/Less Toggle
             </p>
           </div>
@@ -103,10 +103,10 @@ const Task01 = () => {
         </div>
 
         {/* Accordion with toggle behavior */}
-        <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-3 cursor-pointer">
+        <div className="flex flex-col items-start w-full bg-primaryFill rounded-md border border-primaryStroke p-4 gap-4 cursor-pointer">
           <div className="w-full flex items-center gap-2">
             <div className="p-1 bg-red-300 rounded-full"></div>
-            <p className="text-sm font-semibold capitalize tracking-wide">
+            <p className="text-sm font-semibold capitalize tracking-wider">
               Accordion with toggle behavior
             </p>
           </div>

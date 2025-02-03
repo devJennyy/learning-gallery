@@ -26,7 +26,7 @@ const Task05 = () => {
             {switchType ? (
               <div className="">
                 <LuChevronUp size={15} />
-                <div className="z-50 absolute top-8 right-[-10px] w-[110px] flex flex-col bg-quinaryFill border border-primaryStroke rounded-lg p-1 text-sm">
+                <div className="z-50 absolute top-11 right-[-1px] w-[110px] flex flex-col bg-quinaryFill border border-primaryStroke rounded-lg p-1 text-sm">
                   <button className="text-start hover:bg-secondaryFill rounded-sm py-2 px-3">Kilometer</button>
                   <button className="text-start hover:bg-secondaryFill rounded-sm py-2 px-3">Meter</button>
                   <button className="text-start hover:bg-secondaryFill rounded-sm py-2 px-3">Yard</button>

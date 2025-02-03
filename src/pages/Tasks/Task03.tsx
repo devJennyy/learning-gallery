@@ -132,9 +132,9 @@ const Task03 = () => {
       id="task-three"
       className="w-full flex justify-center items-center h-screen"
     >
-      <div className="w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen bg-quinaryFill">
+      <div className="w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen bg-quinaryFill sm:border border-primaryStroke sm:rounded-md">
         {converted ? (
-          <div className="w-full sm:h-fit h-[300px] flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-[26px] relative overflow-hidden">
+          <div className="w-full sm:h-fit h-[300px] flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-[26px] relative overflow-hidden sm:rounded-t-md">
             {/* Background */}
             <div className="w-full">
               <div className="absolute sm:left-2 opacity-30 animate-slide-fast">
@@ -175,7 +175,7 @@ const Task03 = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full sm:h-fit h-[300px] flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-10 relative overflow-hidden">
+          <div className="w-full sm:h-fit h-[300px] flex flex-col justify-center items-center gap-8 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-10 relative overflow-hidden sm:rounded-t-md">
             <div className="flex flex-col gap-1 sm:mt-0 mt-5">
               <p className="capitalize text-2xl font-bold z-10">
                 Temperature Converter
