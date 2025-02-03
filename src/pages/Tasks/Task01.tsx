@@ -47,38 +47,38 @@ const Task01 = () => {
       className="w-full flex flex-col justify-center items-center h-screen"
     >
       <div
-        className="w-full flex flex-col items-center gap-5 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-5 py-8 relative overflow-hidden overflow-y-auto bg-primaryFill sm:border border-primaryStroke sm:rounded-md"
+        className="w-full flex flex-col items-center gap-4 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-4 py-7 relative overflow-hidden overflow-y-auto bg-primaryFill sm:border border-primaryStroke sm:rounded-md"
         style={{
           overflow: "auto",
           scrollbarWidth: "none",
         }}
       >
-        <p className="capitalize text-2xl font-semibold z-10 py-3">
+        <p className="capitalize text-2xl font-semibold z-10 py-2 leading-none mb-1">
           Toggle Components
         </p>
 
         {/* See More/Less Toggle */}
-        <div className="flex flex-col items-start w-full bg-quinaryFill rounded-md p-4 gap-4 cursor-pointer">
+        <div className="flex flex-col items-start w-full bg-quinaryFill rounded-md border sm:border-quinaryFill border-primaryStroke sm:hover:border-primaryStroke p-4 gap-4 cursor-pointer duration-300 transition-colors ease-out">
           <div className="w-full flex items-center gap-2">
             <div className="p-1 bg-red-300 rounded-full"></div>
             <p className="text-sm font-semibold capitalize tracking-wider">
               See More/Less Toggle
             </p>
           </div>
-          <div className="w-full flex flex-col gap-4 text-start rounded-md">
+          <div className="w-full flex flex-col p-4 gap-4 text-start bg-secondaryFill rounded-md">
             <div
               className={`overflow-hidden transition-all duration-300 ease-out`}
               style={{
                 paddingBottom: isExpanded ? "10px" : "0",
               }}
             >
-              <p className="text-sm tracking-wide text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit fugit venia.
+              <p className="text-sm tracking-wide">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Laudantium officiis culpa libero ipsum amet consectetur
-                obcaecati illo
+                obcaecati illo{" "}
                 {isExpanded ? (
                   <span>
-                    animi? Animie ipsam aperiame providente, fugite veniame nulla
+                    animi? Animi ipsam aperiam provident, fugit veniam nulla
                     voluptas temporibus aliquam aliquid illo.
                   </span>
                 ) : (
@@ -101,7 +101,7 @@ const Task01 = () => {
         </div>
 
         {/* Accordion with toggle behavior */}
-        <div className="flex flex-col items-start w-full bg-quinaryFill rounded-md p-4 gap-4 cursor-pointer">
+        <div className="flex flex-col items-start w-full bg-quinaryFill rounded-md border sm:border-quinaryFill border-primaryStroke sm:hover:border-primaryStroke p-4 gap-4 cursor-pointer duration-300 transition-colors ease-out">
           <div className="w-full flex items-center gap-2">
             <div className="p-1 bg-red-300 rounded-full"></div>
             <p className="text-sm font-semibold capitalize tracking-wider">
