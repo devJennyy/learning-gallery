@@ -3,7 +3,6 @@ import { GrPowerCycle } from "react-icons/gr";
 const Task03 = () => {
   const [celsius, setCelsius] = useState("");
   const [fahrenheit, setFahrenheit] = useState("");
-  const [convertType, setConvertType] = useState("celsius to fahrenheit");
   const [converted, setConverted] = useState("");
   const [weatherType, setWeatherType] = useState("");
   const [symbol, setSymbol] = useState("");
@@ -114,6 +113,7 @@ const Task03 = () => {
     }
   };
 
+  const [convertType, setConvertType] = useState("celsius to fahrenheit");
   const switchButton = () => {
     if (convertType === "celsius to fahrenheit") {
       setConvertType("fahrenheit to celsius");

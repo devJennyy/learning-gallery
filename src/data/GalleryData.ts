@@ -32,6 +32,6 @@
       href: "/task-five",
       title: "Distance Conversion",
       description:
-        "Users can choose to input either kilometers, meters, or yards, and the output will be in kilometers, meters, or yards.",
+        "Users can enter a distance in kilometers, meters, miles, or yards, and the output will be displayed in all four units.",
     },
   ];
