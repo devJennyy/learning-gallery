@@ -1,7 +1,9 @@
 import { useState } from "react";
 import GaugeChart from "react-gauge-chart";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 
 const Task02 = () => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [bmi, setBmi] = useState(0);
@@ -62,11 +64,16 @@ const Task02 = () => {
     return 0;
   };
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+
   return (
     <div
       id="task-two"
       className="w-full flex flex-col justify-center items-center h-screen"
     >
+      {loading && <LoadingSpinner />}
       <div className="w-full flex flex-col items-center gap-5 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-4 py-7 relative overflow-hidden bg-quinaryFill sm:border border-primaryStroke sm:rounded-md">
         <p className="capitalize text-2xl font-semibold z-10">
           Your BMI Report

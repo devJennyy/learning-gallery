@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { GrPowerCycle } from "react-icons/gr";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
+
 const Task03 = () => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [celsius, setCelsius] = useState("");
   const [fahrenheit, setFahrenheit] = useState("");
   const [converted, setConverted] = useState("");
@@ -127,11 +130,16 @@ const Task03 = () => {
     setSymbol("");
   };
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+
   return (
     <div
       id="task-three"
       className="w-full flex justify-center items-center h-screen"
     >
+      {loading && <LoadingSpinner />}
       <div className="w-full sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen bg-quinaryFill sm:border border-primaryStroke sm:rounded-md">
         {converted ? (
           <div className="w-full sm:h-fit h-[300px] flex flex-col justify-center items-center gap-5 bg-primaryFill rounded-bl-[3rem] bottom-0 z-10 py-[26px] relative overflow-hidden sm:rounded-t-md">
@@ -171,7 +179,9 @@ const Task03 = () => {
               <p className="sm:text-[3.5rem] text-5xl font-semibold leading-none">
                 {converted} <span className="ml-[-10px]">{symbol}</span>
               </p>
-              <p className="sm:text-[16px] text-sm">The Temperature is {weatherType}</p>
+              <p className="sm:text-[16px] text-sm">
+                The Temperature is {weatherType}
+              </p>
             </div>
           </div>
         ) : (
@@ -281,7 +291,7 @@ const Task03 = () => {
                 </div>
               )}
             </div>
-            
+
             {/* Convert Button */}
             <button
               onClick={() => convert()}

@@ -20,7 +20,7 @@ import { MdEmail } from "react-icons/md";
 import { useEffect, useState } from "react";
 
 const Homepage = () => {
-  const [allData, setAllData] = useState(learningGalleryItems);
+  const [allData, setAllData] = useState([...learningGalleryItems].reverse());
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredData = allData.filter(
@@ -114,14 +114,14 @@ const Homepage = () => {
           </div>
           <Select onValueChange={sortData}>
             <SelectTrigger className="hidden w-48 sm:flex justify-between items-center gap-2 pl-4 h-full bg-primaryFill border border-primaryStroke rounded-md whitespace-nowrap no-scrollbar">
-              <SelectValue placeholder="Sort by oldest" />
+              <SelectValue placeholder="Sort by newest" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Oldest">Sort by oldest</SelectItem>
               <SelectItem value="Newest">Sort by newest</SelectItem>
+              <SelectItem value="Oldest">Sort by oldest</SelectItem>
             </SelectContent>
           </Select>
-          
+
           <a
             href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=devjenny.official@gmail.com&su=Suggestion%20for%20a%20New%20Topic"
             target="_blank"
@@ -132,8 +132,8 @@ const Homepage = () => {
           <Select onValueChange={sortData}>
             <SelectTrigger className="sm:hidden w-[52px] h-full bg-secondaryFill"></SelectTrigger>
             <SelectContent className="p-1 mr-2 mt-1">
-              <SelectItem value="Oldest">Sort by oldest</SelectItem>
               <SelectItem value="Newest">Sort by newest</SelectItem>
+              <SelectItem value="Oldest">Sort by oldest</SelectItem>
               <div className="mt-2 border-t border-primaryStroke">
                 <div className="w-44 h-9 flex justify-center items-center mt-3 text-sm bg-secondaryFill border border-primaryStroke rounded-md whitespace-nowrap hover:bg-quaternaryFill duration-300 transition-colors ease-out">
                   <a
@@ -158,6 +158,7 @@ const Homepage = () => {
                 </p>
                 <a
                   href={items.href}
+                  target="_blank"
                   className="flex justify-center items-center w-fit sm:px-3 px-2 py-1 border border-primaryStroke bg-secondaryFill rounded-md gap-1 hover:bg-quaternaryFill duration-300 transition-colors ease-out"
                 >
                   <p className="text-[12px]">View</p>

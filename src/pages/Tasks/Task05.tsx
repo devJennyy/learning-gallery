@@ -6,8 +6,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useState } from "react";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 
 const Task05 = () => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [unitType, setUnitType] = useState("");
   const [distanceValue, setDistanceValue] = useState("");
   const [kilometer, setKilometer] = useState("");
@@ -23,13 +25,16 @@ const Task05 = () => {
     setYard(calculateMilesToYards.toString());
   }
 
-  
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
 
   return (
     <div
       id="task-five"
       className="flex flex-col justify-center items-center w-full h-screen"
     >
+      {loading && <LoadingSpinner />}
       <div className="relative w-full flex flex-col justify-end items-center gap-8 sm:max-w-[540px] sm:mx-auto sm:h-[667px] sm:p-8 p-4 h-screen overflow-hidden bg-quinaryFill sm:border sm:border-primaryStroke sm:rounded-md">
         <div className="absolute top-0 w-full h-[18rem] flex justify-center items-center bg-primaryFill rounded-b-[3rem] z-0">
           {distanceValue ? (

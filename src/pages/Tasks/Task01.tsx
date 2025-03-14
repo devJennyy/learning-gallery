@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { LuMinus, LuPlus } from "react-icons/lu";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 
 const Task01 = () => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState<number>(0);
   const accordionData = [
@@ -41,19 +43,24 @@ const Task01 = () => {
     }
   };
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+
   return (
     <div
       id="task-one"
-      className="w-full flex flex-col justify-center items-center h-screen"
+      className="w-full flex flex-col justify-start items-center h-screen bg-primaryFill"
     >
+      {loading && <LoadingSpinner />}
       <div
-        className="w-full flex flex-col items-center gap-4 sm:max-w-[540px] sm:mx-auto sm:h-[667px] h-screen px-4 py-7 relative overflow-hidden overflow-y-auto bg-primaryFill sm:border border-primaryStroke sm:rounded-md"
+        className="w-full flex flex-col items-center gap-5 sm:max-w-[740px] sm:mx-auto h-fit sm:px-20 px-5 lg:py-20 py-7 relative overflow-hidden overflow-y-auto"
         style={{
           overflow: "auto",
           scrollbarWidth: "none",
         }}
       >
-        <p className="capitalize text-2xl font-semibold z-10 py-2 leading-none mb-1">
+        <p className="capitalize sm:text-3xl text-2xl font-semibold z-10 py-3 leading-none mb-1">
           Toggle Components
         </p>
 

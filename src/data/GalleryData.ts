@@ -34,4 +34,11 @@
       description:
         "Users can enter a distance in kilometers, meters, miles, or yards, and the output will be displayed in all four units.",
     },
+    {
+      number: "6",
+      href: "https://random-user-generator-by-devjenny.vercel.app/",
+      title: "Random User Generator",
+      description:
+        "Generate a random user base on API response with light and dark mode.",
+    },
   ];
