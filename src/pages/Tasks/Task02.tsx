@@ -80,7 +80,7 @@ const Task02 = () => {
         </p>
 
         {/* BMI Report */}
-        <div className="relative w-full h-[30rem] flex flex-col justify-center items-center bg-primaryFill rounded-xl">
+        <div className="relative w-full sm:h-[30rem] h-[18rem] flex flex-col justify-center items-center bg-primaryFill rounded-xl">
           <div className="sm:w-[380px] w-[340px]">
             <GaugeChart
               id="gauge-chart1"
